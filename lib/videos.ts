@@ -26,18 +26,21 @@ export const videos: Video[] = [
     id: "SZJA_PIZ450",
     title: "A Mom Who Refused to Wait.",
     type: "episode",
+    guest: "Swati",
     episode: 3,
   },
   {
     id: "FRV_Kudqg7A",
     title: "One Interview, One Promise and a Dream Fulfilled.",
     type: "episode",
+    guest: "Abhishek",
     episode: 2,
   },
   {
     id: "ouniFjj-HVM",
     title: "Proving That Grief Doesn't Define Your Destiny.",
     type: "episode",
+    guest: "Dr. Mayanka",
     episode: 1,
   },
   {
