@@ -6,12 +6,11 @@ export interface Video {
   episode?: number;
 }
 
-// Add all video IDs here — paste YouTube links and extract the ID after "v=" or from youtu.be/
-// Full episodes
+// Latest episode first
 export const videos: Video[] = [
   {
     id: "AVUPH_5HBlA",
-    title: "What If Your Dream Had Nothing to Do With Your Family's Legacy?",
+    title: "He Left a Family Legacy Behind. What He Found Was Worth It.",
     type: "episode",
     guest: "Govind",
     episode: 5,
@@ -21,9 +20,30 @@ export const videos: Video[] = [
     title: "Girl From Bhopal, No Map, No Mentor — Just the Audacity to Begin.",
     type: "episode",
     guest: "Micky",
+    episode: 4,
+  },
+  {
+    id: "SZJA_PIZ450",
+    title: "A Mom Who Refused to Wait.",
+    type: "episode",
     episode: 3,
   },
-  // ── Reels & Shorts ──────────────────────────────────────────────────────────
-  // Add reel/short video IDs below. Example:
-  // { id: "XXXXXXXXXXX", title: "Ignorance is bliss", type: "reel", guest: "Micky" },
+  {
+    id: "FRV_Kudqg7A",
+    title: "One Interview, One Promise and a Dream Fulfilled.",
+    type: "episode",
+    episode: 2,
+  },
+  {
+    id: "ouniFjj-HVM",
+    title: "Proving That Grief Doesn't Define Your Destiny.",
+    type: "episode",
+    episode: 1,
+  },
+  {
+    id: "mITCt8XZNp0",
+    title: "The Stories We Never Hear.",
+    type: "episode",
+    episode: 0,
+  },
 ];
