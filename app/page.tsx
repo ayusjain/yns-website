@@ -3,6 +3,8 @@ import { getAllEpisodes } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 import KPIStats from "@/components/KPIStats";
 import NewsletterForm from "@/components/NewsletterForm";
+import VideoCarousel from "@/components/VideoCarousel";
+import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
   const episodes = getAllEpisodes();
@@ -106,6 +108,12 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Video Carousel */}
+      <VideoCarousel />
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Mission strip */}
       <section className="bg-amber py-16">
