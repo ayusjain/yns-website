@@ -64,7 +64,7 @@ export default function AboutPage() {
         <ul className="space-y-3">
           {[
             "Celebrity guests",
-            "Polished "success story" framing",
+            "Polished 'success story' framing",
             "Motivational poster language",
             "Hustle culture",
             "Excessive emojis",
