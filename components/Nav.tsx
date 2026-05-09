@@ -17,16 +17,19 @@ export default function Nav() {
     <header className="bg-teal text-cream sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+        {/* Logo + name */}
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <Image
             src="/Logo.jpeg"
             alt="Your Neighbourhood Stories"
-            width={140}
-            height={48}
-            className="h-10 w-auto object-contain"
+            width={180}
+            height={60}
+            className="h-14 w-auto object-contain"
             priority
           />
+          <span className="hidden sm:block font-heading font-black uppercase text-cream leading-tight tracking-wide text-sm md:text-base">
+            Your<br />Neighbourhood<br />Stories
+          </span>
         </Link>
 
         {/* Desktop nav */}
