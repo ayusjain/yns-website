@@ -5,6 +5,7 @@ import KPIStats from "@/components/KPIStats";
 import NewsletterForm from "@/components/NewsletterForm";
 import VideoCarousel from "@/components/VideoCarousel";
 import Testimonials from "@/components/Testimonials";
+import SocialIcons from "@/components/SocialIcons";
 
 export default function HomePage() {
   const episodes = getAllEpisodes();
@@ -45,6 +46,7 @@ export default function HomePage() {
                 Listen on Spotify
               </a>
             </div>
+            <SocialIcons size={24} className="mt-8" iconClassName="text-teal/40 hover:text-teal" />
           </div>
         </div>
       </section>
