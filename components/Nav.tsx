@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const links = [
@@ -14,9 +15,18 @@ export default function Nav() {
 
   return (
     <header className="bg-teal text-cream sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-heading font-black uppercase text-lg tracking-widest hover:text-amber transition-colors">
-          YNS
+      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Image
+            src="/Logo.jpeg"
+            alt="Your Neighbourhood Stories"
+            width={140}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}

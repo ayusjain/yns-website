@@ -8,32 +8,37 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    // Option A (default): Use Resend — set RESEND_API_KEY in Vercel env vars
     const resendKey = process.env.RESEND_API_KEY;
-    if (resendKey) {
-      const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: "YNS Website <onboarding@resend.dev>",
-          to: "info@yourneighborhoodstories.com",
-          subject: `New Story Submission: ${name}`,
-          text: `Name: ${name}\nEmail: ${email}\n\nStory:\n${story}`,
-          reply_to: email,
-        }),
-      });
 
-      if (!res.ok) throw new Error("Resend error");
-      return NextResponse.json({ ok: true });
+    if (!resendKey) {
+      // Signal to client to fall back to mailto
+      return NextResponse.json({ error: "not_configured" }, { status: 503 });
     }
 
-    // Option B (fallback): log to console (replace with your preferred method)
-    console.log("Contact form submission:", { name, email, story });
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "YNS Website <contact@yourneighborhoodstories.com>",
+        to: "info@yourneighborhoodstories.com",
+        subject: `New Story Submission: ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\n\nStory:\n${story}`,
+        reply_to: email,
+      }),
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      console.error("Resend error:", data);
+      return NextResponse.json({ error: "send_failed" }, { status: 500 });
+    }
+
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("Contact route error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

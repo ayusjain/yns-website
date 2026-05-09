@@ -8,9 +8,17 @@ interface FormState {
   story: string;
 }
 
+function buildMailto(form: FormState) {
+  const subject = encodeURIComponent(`Story Submission: ${form.name}`);
+  const body = encodeURIComponent(
+    `Name: ${form.name}\nEmail: ${form.email}\n\nStory:\n${form.story}`
+  );
+  return `mailto:info@yourneighborhoodstories.com?subject=${subject}&body=${body}`;
+}
+
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>({ name: "", email: "", story: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "mailto_fallback" | "error">("idle");
 
   function update(field: keyof FormState, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -30,9 +38,18 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus("success");
         setForm({ name: "", email: "", story: "" });
-      } else {
-        setStatus("error");
+        return;
       }
+
+      const data = await res.json();
+
+      // If Resend isn't configured yet, open mailto as fallback
+      if (res.status === 503 && data.error === "not_configured") {
+        setStatus("mailto_fallback");
+        return;
+      }
+
+      setStatus("error");
     } catch {
       setStatus("error");
     }
@@ -52,9 +69,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label className="section-label block mb-2" htmlFor="name">
-          Your Name
-        </label>
+        <label className="section-label block mb-2" htmlFor="name">Your Name</label>
         <input
           id="name"
           type="text"
@@ -67,9 +82,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="section-label block mb-2" htmlFor="email">
-          Your Email
-        </label>
+        <label className="section-label block mb-2" htmlFor="email">Your Email</label>
         <input
           id="email"
           type="email"
@@ -82,33 +95,54 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="section-label block mb-2" htmlFor="story">
-          Your Story (in brief)
-        </label>
+        <label className="section-label block mb-2" htmlFor="story">Your Story (in brief)</label>
         <textarea
           id="story"
           required
           rows={6}
           value={form.story}
           onChange={(e) => update("story", e.target.value)}
-          placeholder="Tell us the short version. What did you build, survive, or choose differently? Why does it matter to you?"
+          placeholder="Tell us the short version. What did you build, survive, or choose differently?"
           className="w-full border-2 border-cream-dark bg-white text-teal px-4 py-3 font-sans text-base focus:outline-none focus:border-teal resize-none"
         />
       </div>
 
+      {/* Mailto fallback — shown when Resend isn't configured */}
+      {status === "mailto_fallback" && (
+        <div className="bg-amber/10 border-l-4 border-amber p-4">
+          <p className="font-heading uppercase text-sm tracking-wider text-teal mb-2">
+            One more step
+          </p>
+          <p className="font-body text-teal/80 text-sm mb-3">
+            Click below to send via your email app — it&apos;ll open with everything pre-filled.
+          </p>
+          <a
+            href={buildMailto(form)}
+            className="btn-primary text-sm"
+          >
+            Open Email App →
+          </a>
+        </div>
+      )}
+
       {status === "error" && (
         <p className="text-red-600 font-body text-sm">
-          Something went wrong. Email us directly at info@yourneighborhoodstories.com
+          Something went wrong. Email us directly at{" "}
+          <a href="mailto:info@yourneighborhoodstories.com" className="underline">
+            info@yourneighborhoodstories.com
+          </a>
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {status === "loading" ? "Sending..." : "Send Your Story"}
-      </button>
+      {status !== "mailto_fallback" && (
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {status === "loading" ? "Sending..." : "Send Your Story"}
+        </button>
+      )}
     </form>
   );
 }
