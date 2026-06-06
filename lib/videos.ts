@@ -9,6 +9,20 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "pR5Slg5jcnk",
+    title: "Dentist. MBA. Consultant. And Always One Step Ahead.",
+    type: "episode",
+    guest: "Dr. Vikram",
+    episode: 7,
+  },
+  {
+    id: "snpXGHNDg2Q",
+    title: "CA. Law. Counselling. Pandemic. And Finally — Herself.",
+    type: "episode",
+    guest: "Aparna",
+    episode: 6,
+  },
+  {
     id: "AVUPH_5HBlA",
     title: "He Left a Family Legacy Behind. What He Found Was Worth It.",
     type: "episode",
