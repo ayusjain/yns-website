@@ -13,6 +13,18 @@ export const testimonials: Testimonial[] = [
     source: "on Ep 3 — Micky",
   },
   {
+    name: "shabs0714",
+    comment:
+      "This was a very good watch. I wish it was longer and deeper. Dr.Vikram thanks for sharing your story. I am sure it will inspire many who are limiting themselves down.",
+    source: "on Ep 7 — Dr. Vikram",
+  },
+  {
+    name: "vineetamaheshwari4738",
+    comment:
+      "Very inspiring...and one needs patience and self belief to finally achieve the contentment...with support of ppl around.",
+    source: "on Ep 6 — Aparna",
+  },
+  {
     name: "Priya M.",
     comment:
       "The snow walk moment gave me chills. 5KM uphill alone in a blizzard and he kept going — that's the kind of grit that doesn't make it to your LinkedIn profile.",
