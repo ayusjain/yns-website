@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getAllEpisodes } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 import KPIStats from "@/components/KPIStats";
-import NewsletterForm from "@/components/NewsletterForm";
 import VideoCarousel from "@/components/VideoCarousel";
 import Testimonials from "@/components/Testimonials";
 import SocialIcons from "@/components/SocialIcons";
@@ -127,11 +126,6 @@ export default function HomePage() {
             New episode every 2nd Thursday — YouTube, Spotify, and here.
           </p>
         </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <NewsletterForm />
       </section>
     </>
   );
