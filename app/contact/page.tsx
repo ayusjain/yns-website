@@ -70,7 +70,7 @@ export default function ContactPage() {
                 href="https://www.instagram.com/ynstories_podcast/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading uppercase text-sm tracking-wider text-cream hover:text-amber transition-colors"
+                className="font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
               >
                 Instagram →
               </a>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 href="https://www.youtube.com/@YourNeighborhoodStories"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading uppercase text-sm tracking-wider text-cream hover:text-amber transition-colors"
+                className="font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
               >
                 YouTube →
               </a>
