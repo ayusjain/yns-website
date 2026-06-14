@@ -1,7 +1,10 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resendKey = process.env.RESEND_API_KEY || "REDACTED_RESEND_KEY";
+const resendKey = process.env.RESEND_API_KEY;
+if (!resendKey) {
+  throw new Error("RESEND_API_KEY is not set");
+}
 const resend = new Resend(resendKey);
 
 export async function POST(req: NextRequest) {
