@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -70,17 +71,19 @@ export default function ContactPage() {
                 href="https://www.instagram.com/ynstories_podcast/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
+                className="inline-flex items-center gap-2 font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
               >
-                Instagram →
+                <FaInstagram size={16} className="text-amber" />
+                Instagram
               </a>
               <a
                 href="https://www.youtube.com/@YourNeighborhoodStories"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
+                className="inline-flex items-center gap-2 font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
               >
-                YouTube →
+                <FaYoutube size={16} className="text-amber" />
+                YouTube
               </a>
             </div>
           </div>
