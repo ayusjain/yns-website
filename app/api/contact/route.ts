@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       to: "yourneighborhoodstories@gmail.com",
       subject: `New Story Submission: ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nStory:\n${story}`,
-      reply_to: email,
+      replyTo: email,
     });
 
     return NextResponse.json({ ok: true });
