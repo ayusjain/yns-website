@@ -3,8 +3,33 @@ import { getAllEpisodes } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 
 export const metadata: Metadata = {
-  title: "Episodes",
-  description: "Every episode of Your Neighbourhood Stories — real conversations with real people.",
+  title: "All Episodes | Your Neighbourhood Stories",
+  description:
+    "Browse every episode of Your Neighbourhood Stories — authentic conversations with builders, dreamers, and quiet revolutionaries.",
+  keywords: [
+    "Your Neighbourhood Stories episodes",
+    "Indian podcast episodes",
+    "real story podcast",
+    "long-form conversations",
+  ],
+  openGraph: {
+    title: "All Episodes | Your Neighbourhood Stories",
+    description:
+      "Browse every episode of Your Neighbourhood Stories — authentic conversations with builders, dreamers, and quiet revolutionaries.",
+    url: "https://www.yourneighborhoodstories.com/episodes",
+    type: "website",
+    images: [
+      {
+        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Your Neighbourhood Stories episodes",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://www.yourneighborhoodstories.com/episodes",
+  },
 };
 
 export default function EpisodesPage() {

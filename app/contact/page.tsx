@@ -2,8 +2,33 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Got a Story?",
-  description: "Think you have a story worth telling on Your Neighbourhood Stories? We want to hear from you.",
+  title: "Contact | Your Neighbourhood Stories",
+  description:
+    "Submit your story to Your Neighbourhood Stories and connect with our podcast team.",
+  keywords: [
+    "contact Your Neighbourhood Stories",
+    "submit a story",
+    "podcast guest submissions",
+    "storytelling podcast",
+  ],
+  openGraph: {
+    title: "Contact | Your Neighbourhood Stories",
+    description:
+      "Submit your story to Your Neighbourhood Stories and connect with our podcast team.",
+    url: "https://www.yourneighborhoodstories.com/contact",
+    type: "website",
+    images: [
+      {
+        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Your Neighbourhood Stories",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://www.yourneighborhoodstories.com/contact",
+  },
 };
 
 export default function ContactPage() {

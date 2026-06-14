@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllEpisodes } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
@@ -5,6 +6,37 @@ import KPIStats from "@/components/KPIStats";
 import VideoCarousel from "@/components/VideoCarousel";
 import Testimonials from "@/components/Testimonials";
 import SocialIcons from "@/components/SocialIcons";
+
+export const metadata: Metadata = {
+  title: "Your Neighbourhood Stories — Indian podcast for real people, real grit, and real inspiration",
+  description:
+    "Your Neighbourhood Stories shares authentic conversations with builders, dreamers, and quiet revolutionaries living right next door.",
+  keywords: [
+    "Indian podcast",
+    "real stories",
+    "inspirational stories",
+    "community podcast",
+    "YNS",
+  ],
+  openGraph: {
+    title: "Your Neighbourhood Stories — Real people, real grit, real inspiration",
+    description:
+      "Your Neighbourhood Stories shares authentic conversations with builders, dreamers, and quiet revolutionaries living right next door.",
+    url: "https://www.yourneighborhoodstories.com",
+    type: "website",
+    images: [
+      {
+        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Your Neighbourhood Stories",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://www.yourneighborhoodstories.com",
+  },
+};
 
 export default function HomePage() {
   const episodes = getAllEpisodes();

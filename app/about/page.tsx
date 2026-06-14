@@ -2,8 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Your Neighbourhood Stories — who we are, why we do this, and what we believe.",
+  title: "About Your Neighbourhood Stories | Podcast About Real People",
+  description:
+    "Your Neighbourhood Stories is a podcast that shares authentic, long-form conversations with everyday builders and dreamers across India.",
+  keywords: [
+    "about Your Neighbourhood Stories",
+    "Indian storytelling podcast",
+    "community podcast",
+    "real lives",
+  ],
+  openGraph: {
+    title: "About Your Neighbourhood Stories",
+    description:
+      "Your Neighbourhood Stories is a podcast that shares authentic, long-form conversations with everyday builders and dreamers across India.",
+    url: "https://www.yourneighborhoodstories.com/about",
+    type: "website",
+    images: [
+      {
+        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "About Your Neighbourhood Stories",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://www.yourneighborhoodstories.com/about",
+  },
 };
 
 export default function AboutPage() {

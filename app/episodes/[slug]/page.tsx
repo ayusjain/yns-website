@@ -19,15 +19,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const episode = getEpisodeBySlug(slug);
   if (!episode) return {};
 
+  const episodeUrl = `https://www.yourneighborhoodstories.com/episodes/${episode.slug}`;
+  const episodeDescription = episode.guestQuote || episode.theme;
+
   return {
     title: `Ep ${episode.episode}: ${episode.guest} — ${episode.title}`,
-    description: episode.guestQuote,
+    description: episodeDescription,
+    alternates: {
+      canonical: episodeUrl,
+    },
     openGraph: {
-      title: `The Story of: ${episode.title} | ${episode.guest}`,
-      description: episode.guestQuote,
-      images: episode.youtubeId
-        ? [`https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`]
-        : [],
+      title: `Ep ${episode.episode}: ${episode.guest} — ${episode.title}`,
+      description: episodeDescription,
+      url: episodeUrl,
+      type: "article",
+      images: [
+        {
+          url: episode.youtubeId
+            ? `https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`
+            : "https://www.yourneighborhoodstories.com/Logo.jpeg",
+          width: 1200,
+          height: 630,
+          alt: `Episode ${episode.episode}: ${episode.title}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Ep ${episode.episode}: ${episode.guest} — ${episode.title}`,
+      description: episodeDescription,
+      images: [
+        episode.youtubeId
+          ? `https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`
+          : "https://www.yourneighborhoodstories.com/Logo.jpeg",
+      ],
     },
   };
 }
