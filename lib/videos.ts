@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "HQKjwNZ25cE",
+    title: "The Ocean Told Him It Was Time to Walk Away.",
+    type: "episode",
+    guest: "Arjun Warrier",
+    episode: 8,
+  },
+  {
     id: "pR5Slg5jcnk",
     title: "Dentist. MBA. Consultant. And Always One Step Ahead.",
     type: "episode",
