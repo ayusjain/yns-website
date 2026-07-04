@@ -4,6 +4,8 @@ import { getAllEpisodes } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 import KPIStats from "@/components/KPIStats";
 import VideoCarousel from "@/components/VideoCarousel";
+import ContactForm from "@/components/ContactForm";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import Testimonials from "@/components/Testimonials";
 import SocialIcons from "@/components/SocialIcons";
 
@@ -123,27 +125,70 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Recent Episodes */}
-      {recent.length > 1 && (
-        <section className="py-16 bg-cream-dark">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-end justify-between mb-8">
-              <p className="section-label">All Episodes</p>
-              <Link href="/episodes" className="font-heading uppercase text-sm tracking-wider text-teal hover:text-amber transition-colors">
-                View All →
-              </Link>
+      {/* Watch + Got a Story? (replaced All Episodes) */}
+      <VideoCarousel />
+
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="section-label mb-3">Got a Story?</p>
+            <h2 className="font-heading font-black uppercase text-teal text-3xl md:text-4xl leading-none mb-6">
+              We&apos;re Listening.
+            </h2>
+            <p className="font-body italic text-teal/70 text-lg max-w-xl leading-relaxed">
+              If you&apos;ve built something, survived something, or chose something different — your story might belong here. Tell us about yourself.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            <div className="lg:col-span-3">
+              <ContactForm />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {recent.map((ep) => (
-                <EpisodeCard key={ep.slug} episode={ep} />
-              ))}
+
+            <div className="lg:col-span-2 space-y-8">
+              <div>
+                <p className="section-label mb-3">Email Us Directly</p>
+                <a
+                  href="mailto:info@yourneighborhoodstories.com"
+                  className="font-body text-teal hover:text-amber transition-colors break-all"
+                >
+                  info@yourneighborhoodstories.com
+                </a>
+              </div>
+
+              <div>
+                <p className="section-label mb-3">Follow Along</p>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href="https://www.instagram.com/ynstories_podcast/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
+                  >
+                    <FaInstagram size={16} className="text-amber" />
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@YourNeighborhoodStories"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-heading uppercase text-sm tracking-wider text-amber hover:text-teal transition-colors"
+                  >
+                    <FaYoutube size={16} className="text-amber" />
+                    YouTube
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-teal text-cream p-6">
+                <p className="font-body italic text-cream/80 text-sm leading-relaxed">
+                  &ldquo;Every person has a story worth telling. We just listen.&rdquo;
+                </p>
+              </div>
             </div>
           </div>
-        </section>
-      )}
-
-      {/* Video Carousel */}
-      <VideoCarousel />
+        </div>
+      </section>
 
       {/* Testimonials */}
       <Testimonials />
