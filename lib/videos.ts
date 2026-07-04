@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "S3R0Zuo4k4g",
+    title: "The Warm Blanket of a Salary and the Man Who Let It Go.",
+    type: "episode",
+    guest: "Hemanth Vellur",
+    episode: 9,
+  },
+  {
     id: "HQKjwNZ25cE",
     title: "The Ocean Told Him It Was Time to Walk Away.",
     type: "episode",
