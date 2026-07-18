@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "Idkz3gCN898",
+    title: "A Locked Room, A Blackout, And No Explanation.",
+    type: "episode",
+    guest: "The Experience Of",
+    episode: 10,
+  },
+  {
     id: "S3R0Zuo4k4g",
     title: "The Warm Blanket of a Salary and the Man Who Let It Go.",
     type: "episode",
