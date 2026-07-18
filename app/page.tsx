@@ -134,11 +134,8 @@ export default function HomePage() {
               <h2 className="font-heading font-black uppercase text-teal text-3xl md:text-4xl leading-tight mb-5">
                 The Experience Of
               </h2>
-              <p className="font-body italic text-teal/70 text-lg leading-relaxed mb-6">
+              <p className="font-body italic text-teal/70 text-lg leading-relaxed mb-8">
                 A shorter, sharper format built around one real experience. One moment. No extra noise.
-              </p>
-              <p className="text-teal/70 text-base leading-relaxed mb-8">
-                Not an overarching story. Just a moment in time. This is where we hold that single experience.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -173,6 +170,9 @@ export default function HomePage() {
                   <h3 className="font-heading font-black uppercase text-cream text-xl md:text-2xl leading-tight">
                     What Happened That Night Has No Explanation.
                   </h3>
+                  <p className="mt-3 text-cream/80 text-sm leading-relaxed max-w-xl">
+                    Not an overarching story. Just a moment in time. This is where we hold that single experience.
+                  </p>
                 </div>
               </div>
             </div>
