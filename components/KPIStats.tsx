@@ -1,5 +1,5 @@
 const stats = [
-  { value: "6+", label: "Episodes" },
+  { value: "10+", label: "Episodes" },
   { value: "2", label: "Platforms" },
   { value: "Every 2 Weeks", label: "New Episode" },
   { value: "Real People", label: "No Celebrities" },

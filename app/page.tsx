@@ -165,12 +165,8 @@ export default function HomePage() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                  <p className="section-label text-amber mb-2">Latest Moment</p>
-                  <h3 className="font-heading font-black uppercase text-cream text-xl md:text-2xl leading-tight">
-                    What Happened That Night Has No Explanation.
-                  </h3>
-                  <p className="mt-3 text-cream/80 text-sm leading-relaxed max-w-xl">
+                <div className="absolute bottom-0 left-0 w-full p-5">
+                  <p className="font-body italic text-cream/90 text-base md:text-lg leading-relaxed max-w-lg">
                     Not an overarching story. Just a moment in time. This is where we hold that single experience.
                   </p>
                 </div>
