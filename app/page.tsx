@@ -125,6 +125,61 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* The Experience Of */}
+      <section className="py-16 md:py-24 bg-cream-dark border-t border-cream">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div>
+              <p className="section-label mb-3">New Format</p>
+              <h2 className="font-heading font-black uppercase text-teal text-3xl md:text-4xl leading-tight mb-5">
+                The Experience Of
+              </h2>
+              <p className="font-body italic text-teal/70 text-lg leading-relaxed mb-6">
+                A shorter, sharper format built around one real experience. One moment. No extra noise.
+              </p>
+              <p className="text-teal/70 text-base leading-relaxed mb-8">
+                Not an overarching story. Just a moment in time. This is where we hold that single experience.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://www.youtube.com/watch?v=ThFiPOfj9n8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Watch the Moment
+                </a>
+                <a
+                  href="https://open.spotify.com/episode/171juyA6N19QLHtsrDwFRK?si=5657698486994c82"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-cream-dark p-3 shadow-[0_20px_60px_-25px_rgba(26,92,82,0.25)]">
+              <div className="relative aspect-video bg-teal overflow-hidden">
+                <img
+                  src="https://img.youtube.com/vi/ThFiPOfj9n8/maxresdefault.jpg"
+                  alt="The Experience Of — latest episode"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5 md:p-6">
+                  <p className="section-label text-amber mb-2">Latest Episode</p>
+                  <h3 className="font-heading font-black uppercase text-cream text-xl md:text-2xl leading-tight">
+                    A Locked Room, A Blackout, And No Explanation.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Watch + Got a Story? (replaced All Episodes) */}
       <VideoCarousel />
 
