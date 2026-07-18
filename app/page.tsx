@@ -169,9 +169,9 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                  <p className="section-label text-amber mb-2">Latest Episode</p>
+                  <p className="section-label text-amber mb-2">Latest Moment</p>
                   <h3 className="font-heading font-black uppercase text-cream text-xl md:text-2xl leading-tight">
-                    A Locked Room, A Blackout, And No Explanation.
+                    What Happened That Night Has No Explanation.
                   </h3>
                 </div>
               </div>
