@@ -1,25 +1,9 @@
 import type { Metadata } from "next";
-import { Barlow, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadataBase = new URL("https://www.yourneighborhoodstories.com");
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
-  variable: "--font-barlow",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "700"],
-  variable: "--font-playfair",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -103,7 +87,7 @@ const schemaPodcast = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${barlow.variable} ${playfair.variable}`}>
+    <html lang="en">
       <body className="min-h-screen flex flex-col">
         <script
           type="application/ld+json"

@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "zihDbkxalL0",
+    title: "A Woman Who Proved That Motherhood and Adventure Were Never Opposites.",
+    type: "episode",
+    guest: "Nikita Mathur",
+    episode: 11,
+  },
+  {
     id: "Idkz3gCN898",
     title: "A Locked Room, A Blackout, And No Explanation.",
     type: "episode",
