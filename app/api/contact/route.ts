@@ -1,12 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resendKey = process.env.RESEND_API_KEY;
-if (!resendKey) {
-  throw new Error("RESEND_API_KEY is not set");
-}
-const resend = new Resend(resendKey);
-
 export async function POST(req: NextRequest) {
   try {
     const { name, email, story } = await req.json();
@@ -15,9 +9,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    const resendKey = process.env.RESEND_API_KEY;
+    if (!resendKey) {
       return NextResponse.json({ error: "not_configured" }, { status: 503 });
     }
+
+    const resend = new Resend(resendKey);
 
     await resend.emails.send({
       from: "YNS Website <info@yourneighborhoodstories.com>",
