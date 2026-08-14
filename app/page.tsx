@@ -44,6 +44,16 @@ export default function HomePage() {
   const episodes = getAllEpisodes();
   const latest = episodes.find((e) => e.status === "published");
   const recent = episodes.filter((e) => e.status === "published").slice(0, 3);
+  const videoCarouselEpisodes = episodes
+    .filter((episode) => episode.status === "published" && Boolean(episode.youtubeId))
+    .sort((a, b) => b.episode - a.episode)
+    .map((episode) => ({
+      id: episode.youtubeId,
+      title: episode.title,
+      type: "episode" as const,
+      guest: episode.guest,
+      episode: episode.episode,
+    }));
 
   return (
     <>
@@ -95,13 +105,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div>
                 <h2 className="font-heading font-black uppercase text-teal text-2xl md:text-3xl leading-tight mb-4">
-                  The Story of: {latest.title}
+                  How Can Someone So Alive Write Such Deep Pain?
                 </h2>
                 <p className="font-body italic text-teal/70 text-lg mb-2">
-                  &ldquo;{latest.guestQuote}&rdquo;
+                  &ldquo;She started writing to find answers. She kept writing even when she had none.&rdquo;
                 </p>
                 <p className="text-teal/50 text-sm font-heading uppercase tracking-wider mb-6">
-                  — {latest.guest}
+                  — Rheaa
                 </p>
                 <div className="flex gap-4 flex-wrap">
                   <a
@@ -177,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* Watch + Got a Story? (replaced All Episodes) */}
-      <VideoCarousel />
+      <VideoCarousel videos={videoCarouselEpisodes} />
 
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">

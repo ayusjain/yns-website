@@ -2,13 +2,17 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { videos } from "@/lib/videos";
+import type { Video } from "@/lib/videos";
 
-export default function VideoCarousel() {
+interface VideoCarouselProps {
+  videos: Video[];
+}
+
+export default function VideoCarousel({ videos }: VideoCarouselProps) {
   const [active, setActive] = useState(0);
-  const current = videos[active];
+  const current = videos[Math.min(active, videos.length - 1)] ?? videos[0];
 
-  if (videos.length === 0) return null;
+  if (!videos.length) return null;
 
   return (
     <section className="py-16 md:py-24 bg-cream-dark">
