@@ -43,6 +43,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const episodes = getAllEpisodes();
   const latest = episodes.find((e) => e.status === "published");
+  const latestExperience = episodes
+    .filter((episode) => episode.status === "published" && episode.series === "The Experience Of")
+    .sort((a, b) => b.episode - a.episode)[0];
   const recent = episodes.filter((e) => e.status === "published").slice(0, 3);
   const videoCarouselEpisodes = episodes
     .filter((episode) => episode.status === "published" && Boolean(episode.youtubeId))
@@ -136,7 +139,7 @@ export default function HomePage() {
       )}
 
       {/* The Experience Of */}
-      <section className="py-16 md:py-24 bg-cream-dark border-t border-cream">
+      {latestExperience && <section className="py-16 md:py-24 bg-cream-dark border-t border-cream">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
@@ -149,7 +152,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://www.youtube.com/watch?v=ThFiPOfj9n8"
+                  href={`https://www.youtube.com/watch?v=${latestExperience.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
@@ -157,7 +160,7 @@ export default function HomePage() {
                   Watch the Moment
                 </a>
                 <a
-                  href="https://open.spotify.com/episode/171juyA6N19QLHtsrDwFRK?si=5657698486994c82"
+                  href={latestExperience.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"
@@ -184,7 +187,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* Watch + Got a Story? (replaced All Episodes) */}
       <VideoCarousel videos={videoCarouselEpisodes} />

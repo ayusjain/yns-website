@@ -10,6 +10,7 @@ export interface Episode {
   title: string;
   guest: string;
   theme: string;
+  series?: string;
   youtubeId: string;
   spotifyUrl: string;
   publishDate: string;

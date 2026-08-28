@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "4QoxwVwQh_0",
+    title: "A Night Safari in Goa and 11 Lions Planning a Kill in the Maasai Mara.",
+    type: "episode",
+    guest: "Nikita",
+    episode: 13,
+  },
+  {
     id: "zihDbkxalL0",
     title: "A Woman Who Proved That Motherhood and Adventure Were Never Opposites.",
     type: "episode",
