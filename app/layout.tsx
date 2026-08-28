@@ -3,9 +3,8 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-export const metadataBase = new URL("https://www.yourneighborhoodstories.com");
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.yourneighborhoodstories.com"),
   title: {
     default: "Your Neighbourhood Stories",
     template: "%s | Your Neighbourhood Stories",

@@ -108,13 +108,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div>
                 <h2 className="font-heading font-black uppercase text-teal text-2xl md:text-3xl leading-tight mb-4">
-                  How Can Someone So Alive Write Such Deep Pain?
+                  The Story of: {latest.title}
                 </h2>
                 <p className="font-body italic text-teal/70 text-lg mb-2">
-                  &ldquo;She started writing to find answers. She kept writing even when she had none.&rdquo;
+                  &ldquo;{latest.guestQuote}&rdquo;
                 </p>
                 <p className="text-teal/50 text-sm font-heading uppercase tracking-wider mb-6">
-                  — Rheaa
+                  — {latest.guest}
                 </p>
                 <div className="flex gap-4 flex-wrap">
                   <a
