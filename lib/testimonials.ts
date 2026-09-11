@@ -31,10 +31,16 @@ export const testimonials: Testimonial[] = [
     source: "on Ep 5 — Govind",
   },
   {
-    name: "Aakash T.",
+    name: "Dev K.",
     comment:
-      "Finally a podcast that doesn't interview celebrities. Real people, real struggles, no highlight reels. Subscribed after the first 10 minutes.",
-    source: "on YouTube",
+      "The line about the blueprint not fitting — not your body — I replayed it three times. This is why this podcast exists.",
+    source: "on Ep 3 — Micky",
+  },
+  {
+    name: "@GOPALBENGERI",
+    comment:
+      "Not having more intelligent people on your team is a terrible situation, because it prevents you from learning new things. Your team, probably, expects their leader to know more than they do, but know that that alone isn't why you are the leader.",
+    source: "on Ep 14 — Narendra",
   },
   {
     name: "Sunita R.",
@@ -43,15 +49,18 @@ export const testimonials: Testimonial[] = [
     source: "on Ep 5 — Govind",
   },
   {
-    name: "Dev K.",
-    comment:
-      "The line about the blueprint not fitting — not your body — I replayed it three times. This is why this podcast exists.",
-    source: "on Ep 3 — Micky",
+    name: "@sisirpatnaik3633",
+    comment: "The most awaited video of the year is finally here! ❤️",
+    source: "on Ep 14 — Narendra",
   },
   {
-    name: "Meera J.",
-    comment:
-      "Your Neighbourhood Stories is what happens when someone actually listens. Not just waits for their turn to talk.",
-    source: "on YouTube",
+    name: "@snehagupta3089",
+    comment: "Soo inspiring ❤️",
+    source: "on Ep 12 — Rheaa",
+  },
+  {
+    name: "@snehagupta3089",
+    comment: "My favourite author 😊",
+    source: "on Ep 12 — Rheaa",
   },
 ];
