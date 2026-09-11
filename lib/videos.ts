@@ -9,6 +9,13 @@ export interface Video {
 // Latest episode first
 export const videos: Video[] = [
   {
+    id: "lZZjRw0RjyM",
+    title: "A Man From India's Poorest District Who Became a Leadership Masterclass.",
+    type: "episode",
+    guest: "Narendra",
+    episode: 14,
+  },
+  {
     id: "4QoxwVwQh_0",
     title: "A Night Safari in Goa and 11 Lions Planning a Kill in the Maasai Mara.",
     type: "episode",
