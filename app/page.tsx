@@ -110,12 +110,16 @@ export default function HomePage() {
                 <h2 className="font-heading font-black uppercase text-teal text-2xl md:text-3xl leading-tight mb-4">
                   The Story of: {latest.title}
                 </h2>
-                <p className="font-body italic text-teal/70 text-lg mb-2">
-                  &ldquo;{latest.guestQuote}&rdquo;
-                </p>
-                <p className="text-teal/50 text-sm font-heading uppercase tracking-wider mb-6">
-                  — {latest.guest}
-                </p>
+                {latest.guestQuote && (
+                  <>
+                    <p className="font-body italic text-teal/70 text-lg mb-2">
+                      &ldquo;{latest.guestQuote}&rdquo;
+                    </p>
+                    <p className="text-teal/50 text-sm font-heading uppercase tracking-wider mb-6">
+                      — {latest.guest}
+                    </p>
+                  </>
+                )}
                 <div className="flex gap-4 flex-wrap">
                   <a
                     href={`https://www.youtube.com/watch?v=${latest.youtubeId}`}
