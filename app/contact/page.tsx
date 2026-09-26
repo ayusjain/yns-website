@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     title: "Contact | Your Neighbourhood Stories",
     description:
       "Submit your story to Your Neighbourhood Stories and connect with our podcast team.",
-    url: "https://www.yourneighborhoodstories.com/contact",
+    url: "https://yourneighborhoodstories.com/contact",
     type: "website",
     images: [
       {
-        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        url: "https://yourneighborhoodstories.com/Logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Contact Your Neighbourhood Stories",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.yourneighborhoodstories.com/contact",
+    canonical: "https://yourneighborhoodstories.com/contact",
   },
 };
 

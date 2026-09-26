@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     title: "All Episodes | Your Neighbourhood Stories",
     description:
       "Browse every episode of Your Neighbourhood Stories — authentic conversations with builders, dreamers, and quiet revolutionaries.",
-    url: "https://www.yourneighborhoodstories.com/episodes",
+    url: "https://yourneighborhoodstories.com/episodes",
     type: "website",
     images: [
       {
-        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        url: "https://yourneighborhoodstories.com/Logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Your Neighbourhood Stories episodes",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.yourneighborhoodstories.com/episodes",
+    canonical: "https://yourneighborhoodstories.com/episodes",
   },
 };
 

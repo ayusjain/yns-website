@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.yourneighborhoodstories.com"),
+  metadataBase: new URL("https://yourneighborhoodstories.com"),
   title: {
     default: "Your Neighbourhood Stories",
     template: "%s | Your Neighbourhood Stories",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Ayush" }],
   creator: "Ayush",
   alternates: {
-    canonical: "https://www.yourneighborhoodstories.com",
+    canonical: "https://yourneighborhoodstories.com",
   },
   robots: {
     index: true,
@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     title: "Your Neighbourhood Stories",
     description:
       "Real People. Real Grit. Real Inspiration. Stories of builders, dreamers, and quiet revolutionaries living right next door.",
-    url: "https://www.yourneighborhoodstories.com",
+    url: "https://yourneighborhoodstories.com",
     type: "website",
     locale: "en_IN",
     images: [
       {
-        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        url: "https://yourneighborhoodstories.com/Logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Your Neighbourhood Stories podcast cover",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     description:
       "Real People. Real Grit. Real Inspiration. Stories of builders, dreamers, and quiet revolutionaries living right next door.",
     creator: "@ynstories_pod",
-    images: ["https://www.yourneighborhoodstories.com/Logo.jpeg"],
+    images: ["https://yourneighborhoodstories.com/Logo.jpeg"],
   },
 };
 
@@ -68,13 +68,21 @@ const schemaPodcast = {
   name: "Your Neighbourhood Stories",
   description:
     "Real People. Real Grit. Real Inspiration. Stories of builders, dreamers, and quiet revolutionaries living right next door.",
-  url: "https://www.yourneighborhoodstories.com",
+  url: "https://yourneighborhoodstories.com",
+  sameAs: [
+    "https://www.youtube.com/@YourNeighborhoodStories",
+    "https://spotifycreators-web.app.link/e/niXeTNhy01b",
+    "https://www.instagram.com/ynstories_podcast/",
+    "https://www.linkedin.com/in/ynstories/",
+    "https://x.com/ynstories_pod",
+    "https://www.facebook.com/profile.php?id=61565944108038",
+  ],
   publisher: {
     "@type": "Organization",
     name: "Your Neighbourhood Stories",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+      url: "https://yourneighborhoodstories.com/Logo.jpeg",
     },
   },
   creator: {

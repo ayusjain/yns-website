@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const episode = getEpisodeBySlug(slug);
   if (!episode) return {};
 
-  const episodeUrl = `https://www.yourneighborhoodstories.com/episodes/${episode.slug}`;
+  const episodeUrl = `https://yourneighborhoodstories.com/episodes/${episode.slug}`;
   const episodeDescription = episode.guestQuote || episode.theme;
 
   return {
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         {
           url: episode.youtubeId
             ? `https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`
-            : "https://www.yourneighborhoodstories.com/Logo.jpeg",
+            : "https://yourneighborhoodstories.com/Logo.jpeg",
           width: 1200,
           height: 630,
           alt: `Episode ${episode.episode}: ${episode.title}`,
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         episode.youtubeId
           ? `https://img.youtube.com/vi/${episode.youtubeId}/maxresdefault.jpg`
-          : "https://www.yourneighborhoodstories.com/Logo.jpeg",
+          : "https://yourneighborhoodstories.com/Logo.jpeg",
       ],
     },
   };

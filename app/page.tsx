@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     title: "Your Neighbourhood Stories — Real people, real grit, real inspiration",
     description:
       "Your Neighbourhood Stories shares authentic conversations with builders, dreamers, and quiet revolutionaries living right next door.",
-    url: "https://www.yourneighborhoodstories.com",
+    url: "https://yourneighborhoodstories.com",
     type: "website",
     images: [
       {
-        url: "https://www.yourneighborhoodstories.com/Logo.jpeg",
+        url: "https://yourneighborhoodstories.com/Logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Your Neighbourhood Stories",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.yourneighborhoodstories.com",
+    canonical: "https://yourneighborhoodstories.com",
   },
 };
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllEpisodes } from "@/lib/episodes";
 
-const BASE_URL = "https://www.yourneighborhoodstories.com";
+const BASE_URL = "https://yourneighborhoodstories.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const episodes = getAllEpisodes().filter((e) => e.status === "published");
