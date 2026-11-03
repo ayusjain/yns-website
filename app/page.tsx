@@ -129,6 +129,16 @@ export default function HomePage() {
                   >
                     Watch Episode
                   </a>
+                  {latest.spotifyUrl && (
+                    <a
+                      href={latest.spotifyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-outline"
+                    >
+                      Listen on Spotify
+                    </a>
+                  )}
                   <Link href={`/episodes/${latest.slug}`} className="btn-outline">
                     Show Notes
                   </Link>

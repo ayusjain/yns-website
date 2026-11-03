@@ -61,6 +61,8 @@ export default async function EpisodePage({ params }: Props) {
   const { slug } = await params;
   const episode = getEpisodeBySlug(slug);
   if (!episode) notFound();
+  const canEmbedSpotify =
+    episode.spotifyUrl.startsWith("https://open.spotify.com/");
 
   return (
     <article className="max-w-4xl mx-auto px-6 py-12">
@@ -86,7 +88,7 @@ export default async function EpisodePage({ params }: Props) {
       )}
 
       {/* Spotify embed */}
-      {episode.spotifyUrl && (
+      {canEmbedSpotify && (
         <div className="mb-10">
           <SpotifyEmbed spotifyUrl={episode.spotifyUrl} />
         </div>
