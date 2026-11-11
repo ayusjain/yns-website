@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllEpisodes } from "@/lib/episodes";
+import { getAllEpisodes, getEpisodeDisplayTitle } from "@/lib/episodes";
 import EpisodeCard from "@/components/EpisodeCard";
 import KPIStats from "@/components/KPIStats";
 import VideoCarousel from "@/components/VideoCarousel";
@@ -108,7 +108,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div>
                 <h2 className="font-heading font-black uppercase text-teal text-2xl md:text-3xl leading-tight mb-4">
-                  The Story of: {latest.title}
+                  {getEpisodeDisplayTitle(latest)}
                 </h2>
                 {latest.guestQuote && (
                   <>

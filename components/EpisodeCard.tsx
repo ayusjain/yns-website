@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Episode, getYouTubeThumbnail } from "@/lib/episodes";
+import { Episode, getEpisodeDisplayTitle, getYouTubeThumbnail } from "@/lib/episodes";
 
 interface Props {
   episode: Episode;
@@ -50,7 +50,7 @@ export default function EpisodeCard({ episode }: Props) {
       <div className="p-5">
         <p className="section-label mb-2">{episode.guest}</p>
         <h3 className="font-heading font-black text-teal text-base leading-tight mb-3 group-hover:text-amber transition-colors">
-          The Story of: {episode.title}
+          {getEpisodeDisplayTitle(episode)}
         </h3>
         <p className="text-teal/60 text-xs font-heading uppercase tracking-wider">
           {episode.theme}

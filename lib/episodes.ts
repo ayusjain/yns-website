@@ -20,6 +20,11 @@ export interface Episode {
   content: string;
 }
 
+export function getEpisodeDisplayTitle(episode: Episode): string {
+  const prefix = episode.series === "The Experience Of" ? "The Experience Of" : "The Story of";
+  return `${prefix}: ${episode.title}`;
+}
+
 export function getAllEpisodes(): Episode[] {
   const files = fs.readdirSync(episodesDir).filter((f) => f.endsWith(".mdx"));
 

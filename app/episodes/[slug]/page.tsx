@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllEpisodes, getEpisodeBySlug } from "@/lib/episodes";
+import { getAllEpisodes, getEpisodeBySlug, getEpisodeDisplayTitle } from "@/lib/episodes";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import SpotifyEmbed from "@/components/SpotifyEmbed";
 import GiscusComments from "@/components/GiscusComments";
@@ -70,7 +70,7 @@ export default async function EpisodePage({ params }: Props) {
       <div className="mb-10">
         <p className="section-label mb-2">Episode {episode.episode} — {episode.guest}</p>
         <h1 className="font-heading font-black uppercase text-teal text-2xl md:text-4xl leading-tight mb-4">
-          The Story of: {episode.title}
+          {getEpisodeDisplayTitle(episode)}
         </h1>
         <p className="font-body italic text-teal/60 text-xs uppercase tracking-wider">
           {episode.theme}
@@ -82,7 +82,7 @@ export default async function EpisodePage({ params }: Props) {
         <div className="mb-8">
           <YouTubeEmbed
             youtubeId={episode.youtubeId}
-            title={`The Story of: ${episode.title} | ${episode.guest}`}
+            title={`${getEpisodeDisplayTitle(episode)} | ${episode.guest}`}
           />
         </div>
       )}
